@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #050505;
+  --color-foreground: #ededed;
+  --color-green: #22c55e;
+  --color-green-dark: #16a34a;
+  --color-green-glow: rgba(34, 197, 94, 0.15);
+  --color-card: #0e0e0e;
+  --color-card-border: #1a1a1a;
+  --color-gray-light: #999;
+  --color-gray-mid: #555;
+  --color-gray-dark: #2a2a2a;
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: #050505;
+  color: #ededed;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #22c55e;
+}
+
+/* Green glow effect utility */
+.green-glow {
+  box-shadow: 0 0 80px 40px rgba(34, 197, 94, 0.08),
+    0 0 160px 80px rgba(34, 197, 94, 0.04);
+}
+
+.green-glow-strong {
+  box-shadow: 0 0 60px 20px rgba(34, 197, 94, 0.15),
+    0 0 120px 60px rgba(34, 197, 94, 0.06);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(34, 197, 94, 0.05);
+}
+
+/* Portfolio card overlay */
+.portfolio-overlay {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* Navbar backdrop */
+.navbar-scrolled {
+  background: rgba(5, 5, 5, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Button glow animation */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px 5px rgba(34, 197, 94, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 40px 10px rgba(34, 197, 94, 0.2);
+  }
+}
+
+.btn-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Badge shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.badge-shimmer {
+  background: linear-gradient(90deg,
+      rgba(34, 197, 94, 0.1) 0%,
+      rgba(34, 197, 94, 0.2) 50%,
+      rgba(34, 197, 94, 0.1) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* White section */
+.section-white {
+  background: #fafafa;
+  color: #050505;
+}
