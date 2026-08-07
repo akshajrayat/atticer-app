@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Twitter, Instagram, Dribbble } from "lucide-react";
+import { getAssetPath } from "@/utils/paths";
+
 
 const footerLinks = [
   { label: "Work", href: "/#work" },
@@ -20,7 +22,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <Image
-                src="/atticer-logo.png"
+                src={getAssetPath("/atticer-logo.png")}
                 alt="Atticer logo"
                 width={32}
                 height={32}

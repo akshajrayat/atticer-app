@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import FadeInShared from "@/components/FadeIn";
+import { getAssetPath } from "@/utils/paths";
+
 
 function FadeIn({
   children,
@@ -98,7 +100,7 @@ export default function ApproachContent() {
           className="absolute inset-0 will-change-transform"
         >
           <Image
-            src="/forest-bg.jpg"
+            src={getAssetPath("/forest-bg.jpg")}
             alt="Forest background"
             fill
             className="object-cover"
@@ -120,7 +122,7 @@ export default function ApproachContent() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5 group">
             <Image
-              src="/atticer-logo.png"
+              src={getAssetPath("/atticer-logo.png")}
               alt="Atticer logo"
               width={32}
               height={32}

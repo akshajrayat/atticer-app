@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
+import { getAssetPath } from "@/utils/paths";
+
 
 /* ── Project data ── */
 const projects = [
@@ -144,7 +146,7 @@ function ProjectCard({
           style={{ backgroundColor: project.bg }}
         >
           <Image
-            src={project.image}
+            src={getAssetPath(project.image)}
             alt={project.name}
             fill
             className={`transition-transform duration-700 group-hover:scale-105 ${
